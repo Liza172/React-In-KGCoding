@@ -3,9 +3,8 @@ import style from './TodoItem.module.css'
 import { TodoItemsContext } from "../Store/Todo_Item_Store";
 import { useContext } from "react";
 
-function TodoItem({ todoName, todoDate, onDeleteButton }) {
-  const contextObj = useContext(TodoItemsContext);
-  const todoItems = contextObj.todoItems;
+function TodoItem({ todoName, todoDate}) {
+  const {deleteItem} = useContext(TodoItemsContext);
 
     return (
       <div className={style.container}>
@@ -14,7 +13,7 @@ function TodoItem({ todoName, todoDate, onDeleteButton }) {
           <div className="col-4">{todoDate}</div>
           <div className="col-2">
             <button type="button" className="btn btn-danger kg-button"
-                onClick={() => onDeleteButton(todoName)}
+                onClick={() => deleteItem(todoName)}
             >
               <MdDelete />
             </button>

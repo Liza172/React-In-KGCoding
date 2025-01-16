@@ -1,10 +1,14 @@
 import { useState } from "react";
+import { useContext } from "react";
+import { TodoItemsContext } from "../Store/Todo_Item_Store";
+
 import { MdAssignmentAdd } from "react-icons/md";
 
-function AddTodo( {onNewItem} ) {
+function AddTodo( ) {
 
     const [todoName, setTodoName] = useState('');
     const [todoDate, setTodoDate] = useState('');
+    const {addNewItem} = useContext(TodoItemsContext);
 
     const handleChangeName = (e) => {
         setTodoName(e.target.value);
@@ -15,7 +19,7 @@ function AddTodo( {onNewItem} ) {
     }
 
     const handleAddClick = () => {
-      onNewItem(todoName, todoDate);
+      addNewItem(todoName, todoDate);
       setTodoDate('');
       setTodoName('');
     }

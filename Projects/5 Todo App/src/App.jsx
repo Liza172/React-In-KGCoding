@@ -32,9 +32,9 @@ function App() {
     }}>
     <center className="todo-container">
 
-      <AddTodo onNewItem = {handlenewTodoItems}/>
-      {todoItems.length == 0 && <ErrorMessage todoItems={todoItems} />}
-      <TodoItems todoItems={todoItems} onDeleteButton = {handleDeleteButton}/>
+      <AddTodo />
+      {todoItems.length == 0 && <ErrorMessage  />}
+      <TodoItems  />
     </center>
     </TodoItemsContext.Provider>
   );
