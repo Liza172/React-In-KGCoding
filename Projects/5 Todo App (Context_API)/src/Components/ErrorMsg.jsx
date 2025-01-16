@@ -1,5 +1,3 @@
-
-
 function ErrorMessage() {
   
   return <h2>Empty Bucket</h2>
