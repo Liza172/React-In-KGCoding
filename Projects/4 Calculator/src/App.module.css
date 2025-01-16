@@ -1,0 +1,22 @@
+.calculator
+{
+  
+  width: 200px;
+  border: 2px solid rgba(90,90,90);
+  border-radius: 5px;
+  background-color: rgb(38, 38, 38);
+}
+#a
+{
+  color: rgb(233, 153, 4);
+  font-family: cursive;
+}
+#b
+{
+  color: rgb(4, 168, 4);
+  font-family: cursive;
+}
+.parent svg
+{
+  padding-left: 10px;
+}
