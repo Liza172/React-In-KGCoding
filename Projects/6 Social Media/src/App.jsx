@@ -6,7 +6,7 @@ import Footer from './Components/Footer'
 import Sidebar from './Components/Sidebar'
 import CreatePost from './Components/CreatePost'
 import Post from './Components/Post'
-import PostList from './Components/Post'
+import PostList from './Components/PostList'
 import { useState } from 'react'
 import PostListProvider from './Store/Port-list-store'
 function App() {
@@ -18,7 +18,7 @@ function App() {
         <Sidebar selectedTab = {selectedTab} setselectedTab = {setselectedTab}></Sidebar>
         <div className="contain">
           <Header></Header>
-          {selectedTab == "Home" ? (<PostList></PostList>) : ( <CreatePost></CreatePost>)};
+          {selectedTab == "Home" ? (<PostList></PostList>) : ( <CreatePost></CreatePost>)}
           <Footer></Footer>
         </div>
     </div>

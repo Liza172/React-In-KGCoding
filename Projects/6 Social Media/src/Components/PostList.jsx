@@ -6,10 +6,10 @@ const PostList = () =>
 {
   const {postList} = useContext(PostListData);
   console.log(postList);
-  
+
  return <>
   {postList.map((post) => (
-    <Post/>
+    <Post key = {post.id} post = {post}/>
   ))}
   
     
