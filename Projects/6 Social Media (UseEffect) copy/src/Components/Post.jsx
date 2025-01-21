@@ -25,9 +25,9 @@ const Post = ({post}) =>
       </h5>
       <p className="card-text">{post.body} </p>
       {post.tags.map((tag) => 
-      {
-        <button key = {tag} className = "badge text-bg-primary">{tag}</button>
-      })}
+      (
+        <button key = {tag} className = "badge text-bg-primary tag">{tag}</button>
+      ))}
       <div className="alert alert-info reaction" role="alert">
        This Post has been <FcLike />   {post.reactions.likes}   and   <FcDislike /> {post.reactions.dislikes} peoples...!!!
       </div>

@@ -13,7 +13,7 @@ const PostList = () =>
     fetch("https://dummyjson.com/posts")
     .then((res) => res.json())
     .then(data => {
-      addIitialPost(data.posts)
+      addIitialPost(data.posts);
     });
   }
 

@@ -31,23 +31,15 @@ const PostListProvider = ({children}) =>
 {
   const [postList, dispathchPostList] = useReducer(postListReducer,[]);
 
-  const addPost = (userIdData, postTitleData, postBodyData, reactionsData, tagsData) => 
+  const addPost = (post) => 
   {
 
     console.log(`${userIdData} ${postTitleData} ${postBodyData} ${reactionsData} ${tagsData}`)
     dispathchPostList
     ({
       type: "ADD_POST",
-      payload:
-      {
-        id : Date.now(),
-        title : postTitleData,
-        body : postBodyData,
-        reactions : reactionsData,
-        userId : userIdData,
-        tags : tagsData, 
-      }
-    })
+      payload: post,
+    });
   };
 
   const addIitialPost = (posts) => 
