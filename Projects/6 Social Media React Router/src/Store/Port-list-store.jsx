@@ -5,7 +5,7 @@ export const PostList = createContext({
   addPost: () => {},
   addIitialPost: () => {},
   deletePost: () => {},
-  fetch : false
+  
 });
 
 const postListReducer = (currPostList,action) =>
@@ -31,9 +31,6 @@ const postListReducer = (currPostList,action) =>
 const PostListProvider = ({children}) =>
 {
   const [postList, dispathchPostList] = useReducer(postListReducer,[]);
-
-
-  const [fetching, setFetching] = useState(false);
 
   const addPost = (post) => 
   {
@@ -66,31 +63,14 @@ const PostListProvider = ({children}) =>
     console.log(`Delete Post call for ${postid}`)
   };
 
-  const controller  = new AbortController();
-  const signal = controller.signal;
-
-  
-  useEffect( () => {
-    setFetching(true)
-    fetch("https://dummyjson.com/posts", {signal})
-    .then((res) => res.json())
-    .then(data => {
-      addIitialPost(data.posts);
-      setFetching(false);
-    });
-
     return () => {
       console.log("Cleaning Up UseEffect.");
       controller.abort;
     }
-  }, [])
-    
-
-
+  
   return (
-  <PostList.Provider value={{postList, addPost,addIitialPost, deletePost, fetching}}>{children}</PostList.Provider>
-  );
-};
-
+    <PostList.Provider value={{postList, addPost,addIitialPost, deletePost}}>{children}</PostList.Provider>
+    );
+  }
 
 export  default PostListProvider;
