@@ -25,7 +25,7 @@ const postListReducer = (currPostList,action) =>
     newPostList = action.payload.posts;
     
   }
-  return newPostList;;
+  return newPostList;
 }
 
 const PostListProvider = ({children}) =>
@@ -62,11 +62,6 @@ const PostListProvider = ({children}) =>
     })
     console.log(`Delete Post call for ${postid}`)
   };
-
-    return () => {
-      console.log("Cleaning Up UseEffect.");
-      controller.abort;
-    }
   
   return (
     <PostList.Provider value={{postList, addPost,addIitialPost, deletePost}}>{children}</PostList.Provider>
